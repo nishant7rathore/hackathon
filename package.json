@@ -1,0 +1,25 @@
+{
+  "name": "hackathon",
+  "version": "1.0.0",
+  "description": "A recruting app for CAF",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishant7rathore/hackathon.git"
+  },
+  "keywords": [
+    "caf"
+  ],
+  "author": "Nishant Rathore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nishant7rathore/hackathon/issues"
+  },
+  "homepage": "https://github.com/nishant7rathore/hackathon#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
