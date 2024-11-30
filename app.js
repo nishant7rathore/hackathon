@@ -9,11 +9,18 @@ const fs = require('fs');
 const port = 3000;//config.get('Deployment.settings.port');
 const host = 'localhost';//config.get('Deployment.settings.host');
 
-app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/', (req, res) => {
+app.use(express.static(path.join(__dirname, '/public')));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname+'/public/html/index.html'));
 })
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname+'/public/html/login.html'));
+})
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://${host}:${port}`);

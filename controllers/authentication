@@ -1,0 +1,8 @@
+User = require('../models/user.model');
+// Login
+exports.loginUser = (req, res) => {
+
+    let userName = req.param('user_name');
+    let password = req.param('password');
+
+};
