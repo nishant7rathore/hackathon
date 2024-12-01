@@ -8,7 +8,7 @@ To run the app, you must install Node version > 23, NPM version > 10, and Mongo 
 
 # node app
 
-The server will run locally and listens to port 3000.
+The server will run locally and listen to port 3000.
 
 
 
