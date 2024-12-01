@@ -12,7 +12,7 @@ const host = 'localhost';//config.get('Deployment.settings.host');
 const router = express.Router();
 const userController = require('./controllers/userController');
 const pug = require('pug');
-
+let User = require('./models/user.js');
 var url = "mongodb://localhost:27017/hackathon";
 
  
@@ -29,6 +29,15 @@ mongoose.connect("mongodb://localhost:27017/hackathon?directConnection=true", {
   useUnifiedTopology: true
 }); 
 
+// const userSchema = new mongoose.Schema({name:String, password:String})
+// const User = mongoose.model('User',userSchema);
+
+
+User.createCollection().then(function(collection){
+  console.log('User created');
+}).catch(function(err){
+  console.log(err+'User created');
+});
 
 // collection.insertOne({ hello : 'me' }, (err, result) => {
 //   if (err) {
@@ -41,8 +50,19 @@ mongoose.connect("mongodb://localhost:27017/hackathon?directConnection=true", {
 
 app.post('/login', (req, res) => {
   console.log(req.body);
+  var candidate = new User({
+    name:req.body.username,
+    password: req.body.password
+  });
+  candidate.save().then(function (models) {
+    console.log('user data saved'); 
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+    
   const html = path.join(__dirname+'/public/html/index.html');
-  res.json({html:html.toString()});
+  res.json(req.body);
 })
 
 
