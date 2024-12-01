@@ -71,6 +71,42 @@ app.get('/index', (req, res) => {
   res.sendFile(html);
 })
 
+app.get('/ApplicationStatus', (req, res) => {
+  const html = path.join(__dirname+'/public/html/ApplicationStatus.html');
+  res.sendFile(html);
+})
+
+app.get('/GetReady', (req, res) => {
+  const html = path.join(__dirname+'/public/html/GetReady.html');
+  res.sendFile(html);
+})
+
+app.get('/BoostYourApplication', (req, res) => {
+  const html = path.join(__dirname+'/public/html/BoostYourApplication.html');
+  res.sendFile(html);
+})
+
+app.get('/CAFBenefits', (req, res) => {
+  const html = path.join(__dirname+'/public/html/CAFBenefits.html');
+  res.sendFile(html);
+})
+
+app.get('/ForceTest', (req, res) => {
+  const html = path.join(__dirname+'/public/html/ForceTest.html');
+  res.sendFile(html);
+})
+
+app.get('/Medical', (req, res) => {
+  const html = path.join(__dirname+'/public/html/Medical.html');
+  res.sendFile(html);
+})
+
+app.get('/Resources', (req, res) => {
+  const html = path.join(__dirname+'/public/html/Resources.html');
+  res.sendFile(html);
+})
+
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname+'/public/html/login.html'));
 })

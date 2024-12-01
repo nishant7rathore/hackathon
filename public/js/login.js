@@ -9,7 +9,7 @@ function submitLoginForm() {
  
         success: function(data)
         {
-           window.location.href = 'index?username='+data.username+'&password'+data.password;
+           window.location.href = 'index?username='+data.username+'&password='+data.password;
         }
     });
   }
